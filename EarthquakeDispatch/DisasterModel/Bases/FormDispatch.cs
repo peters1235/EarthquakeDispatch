@@ -23,11 +23,11 @@ namespace DisasterModel
             paraPanel.Controls.Add(_ucParas);
         }
 
-        private void ForTest()
+        protected virtual void ForTest()
         {
             txtEarthquakeName.Text = "he";
-            txtFacilityLoc.Text = @"E:\17\private\Disaster\Data\EarthquakeData\救援队伍分布.shp";
-            txtIncidentLoc.Text = @"E:\17\private\Disaster\Data\EarthquakeData\埋压人员分布点.shp";
+            txtFacilityLoc.Text = @"E:\17\private\Disaster\Data\added\供水维修人员.shp";
+            txtIncidentLoc.Text = @"E:\17\private\Disaster\Data\added\供水设备破坏点.shp";
             txtOutputFolder.Text = GetNonExist();
         }
 

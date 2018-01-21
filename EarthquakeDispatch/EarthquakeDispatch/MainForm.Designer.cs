@@ -62,6 +62,7 @@ namespace EarthquakeDispatch
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.axMapControl1 = new ESRI.ArcGIS.Controls.AxMapControl();
+            this.供水设备抢修人员分配ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.axToolbarControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.axTOCControl1)).BeginInit();
@@ -152,7 +153,8 @@ namespace EarthquakeDispatch
             this.mnuTent,
             this.mnuRescue,
             this.mnuElectricity,
-            this.mnuFireFighter});
+            this.mnuFireFighter,
+            this.供水设备抢修人员分配ToolStripMenuItem});
             this.mnuParent.Name = "mnuParent";
             this.mnuParent.Size = new System.Drawing.Size(92, 21);
             this.mnuParent.Text = "计算物资供应";
@@ -319,6 +321,13 @@ namespace EarthquakeDispatch
             this.axMapControl1.TabIndex = 9;
             this.axMapControl1.Visible = false;
             // 
+            // 供水设备抢修人员分配ToolStripMenuItem
+            // 
+            this.供水设备抢修人员分配ToolStripMenuItem.Name = "供水设备抢修人员分配ToolStripMenuItem";
+            this.供水设备抢修人员分配ToolStripMenuItem.Size = new System.Drawing.Size(196, 22);
+            this.供水设备抢修人员分配ToolStripMenuItem.Text = "供水设备抢修人员分配";
+            this.供水设备抢修人员分配ToolStripMenuItem.Click += new System.EventHandler(this.供水设备抢修人员分配ToolStripMenuItem_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -382,6 +391,7 @@ namespace EarthquakeDispatch
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage2;
         private ESRI.ArcGIS.Controls.AxMapControl axMapControl1;
+        private System.Windows.Forms.ToolStripMenuItem 供水设备抢修人员分配ToolStripMenuItem;
     }
 }
 

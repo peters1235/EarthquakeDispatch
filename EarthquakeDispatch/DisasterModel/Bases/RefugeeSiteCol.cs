@@ -68,6 +68,12 @@ namespace DisasterModel
                 while (feature != null)
                 {
                     RefugeeSite site = CreateSite(feature);
+                    if (site == null)
+                    {
+                        feature = cursor.NextFeature();
+                        continue;
+                    }
+
                     int insertIndex = GetInsertIndex(results, site);
                     results.Insert(insertIndex, site);
                     feature = cursor.NextFeature();

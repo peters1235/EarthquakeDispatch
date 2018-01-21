@@ -13,6 +13,10 @@ namespace DisasterModel
 
         Electricity = 3,
         FireFighter = 4,
-        Rescue = 5
+        Rescue = 5,
+
+        WaterFixer= 6,
+        Gas =7,
+        Communication = 8
     }
 }

@@ -97,5 +97,29 @@ namespace DisasterModel
         }
     }
 
-    
+    class RefugeeSiteFireFighter : RefugeeSite
+    {
+        internal override string ResourceName()
+        {
+            return "消防员";
+        }
+
+        internal override string ResourceUnit()
+        {
+            return "名";
+        }
+    }
+
+    class RefugeeSiteWaterFixer : RefugeeSite
+    {
+        internal override string ResourceName()
+        {
+            return "供水维修人员";
+        }
+
+        internal override string ResourceUnit()
+        {
+            return "名";
+        }
+    }
 }

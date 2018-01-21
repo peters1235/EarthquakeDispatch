@@ -1,0 +1,12 @@
+E:\17\private\Disaster\Earthquake\EarthquakeDispatch\Output\Properties\Resources.resx
+E:\17\private\Disaster\Earthquake\EarthquakeDispatch\Output\Properties\Resources.Designer.cs
+E:\17\private\Disaster\Earthquake\EarthquakeDispatch\Output\应急物资供应计算程序.exe.config
+E:\17\private\Disaster\Earthquake\EarthquakeDispatch\Output\应急物资供应计算程序.exe
+E:\17\private\Disaster\Earthquake\EarthquakeDispatch\Output\应急物资供应计算程序.pdb
+E:\17\private\Disaster\Earthquake\EarthquakeDispatch\EarthquakeDispatch\obj\x86\Debug\EarthquakeDispatch.csprojResolveAssemblyReference.cache
+E:\17\private\Disaster\Earthquake\EarthquakeDispatch\EarthquakeDispatch\obj\x86\Debug\EarthquakeDispatch.MainForm.resources
+E:\17\private\Disaster\Earthquake\EarthquakeDispatch\EarthquakeDispatch\obj\x86\Debug\EarthquakeDispatch.Properties.Resources.resources
+E:\17\private\Disaster\Earthquake\EarthquakeDispatch\EarthquakeDispatch\obj\x86\Debug\EarthquakeDispatch.csproj.GenerateResource.Cache
+E:\17\private\Disaster\Earthquake\EarthquakeDispatch\EarthquakeDispatch\obj\x86\Debug\应急物资供应计算程序.exe
+E:\17\private\Disaster\Earthquake\EarthquakeDispatch\EarthquakeDispatch\obj\x86\Debug\应急物资供应计算程序.pdb
+E:\17\private\Disaster\Earthquake\EarthquakeDispatch\Output\Util\log4net.config

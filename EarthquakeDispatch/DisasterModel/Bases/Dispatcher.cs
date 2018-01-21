@@ -12,8 +12,6 @@ namespace DisasterModel
 {
     public class Dispatcher
     {
-     
-
         string _facilityClassName = "物资贮备分布点";
         string _incidentClassName = "灾区位置分布点";
         RegionCoefficient _region = null;
@@ -220,6 +218,8 @@ namespace DisasterModel
                 _map.AddLayer(networkLayer);
                 _map.MoveLayer(networkLayer, 3);
 
+                //_map.AreaOfInterest = (networkLayer as ESRI.ArcGIS.Carto.NetworkLayerClass).AreaOfInterest;
+                pageLayoutControl.Extent = (networkLayer as IGeoDataset).Extent;
             }
             return _map;
         }
@@ -280,7 +280,7 @@ namespace DisasterModel
                 case EnumResource.Rescue:
                     return new RescuerReportWriter();
                 default:
-                    return null;
+                    return new ResourceReportWriter();
             }  
         }
 

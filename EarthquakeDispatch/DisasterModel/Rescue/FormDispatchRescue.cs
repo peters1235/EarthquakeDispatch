@@ -2,38 +2,38 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using DisasterModel;
+using DisasterModel.SitesCol;
 using DisasterModel.Forms;
+
 
 namespace DisasterModel
 {
-    public class FormDispatchFireFighter : FormDispatch
+    public class FormDispatchRescue: FormDispatch
     {
-      
-        public FormDispatchFireFighter()
+        public FormDispatchRescue()
         {
-            this.Text = "消防员配送方案";
+            this.Text = "救援人员配送方案";
             ParaPanelVibility(false);
-            SetRepoLablel("消防站");
-            SetSiteLabel("着火点");
+            SetRepoLablel("救援队伍");
+            SetSiteLabel("埋压点");
         }
 
         protected override UCParas GetUC()
         {
-            return new UCFireFighter ();
+            return new UCParas();
         }
         protected override RepositoryCol GetRepoCol()
         {
             RepositoryCol repoCol = new RepositoryCol();
-            repoCol.Setup(_dispatcher.RepoFeatureClass, RepositoryCol.FireFighterField);
+            repoCol.Setup(_dispatcher.RepoFeatureClass, RepositoryCol.RescueField); ;
             return repoCol;
         }
 
         protected override RefugeeSiteCol GetSiteCol()
         {
-            RefugeeSiteFireFighterCol siteCol = new RefugeeSiteFireFighterCol();
+            RefugeeSiteRescueCol siteCol = new RefugeeSiteRescueCol();
            
-           siteCol.Setup(_dispatcher);
+            siteCol.Setup(_dispatcher);
             return siteCol;
         }
     }

@@ -117,103 +117,103 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Dispatcher.cs" />
-    <Compile Include="Earthquake.cs" />
-    <Compile Include="ElectricityReportWriter.cs" />
-    <Compile Include="EnumResource.cs" />
-    <Compile Include="ExportActiveView.cs" />
-    <Compile Include="ExportToWord.cs" />
-    <Compile Include="FireFighterReportWriter.cs" />
-    <Compile Include="Forms\FormDispatch.cs">
+    <Compile Include="Bases\Dispatcher.cs" />
+    <Compile Include="Bases\Earthquake.cs" />
+    <Compile Include="Electricity\ElectricityReportWriter.cs" />
+    <Compile Include="Bases\EnumResource.cs" />
+    <Compile Include="ExportView\ExportActiveView.cs" />
+    <Compile Include="ExportView\ExportToWord.cs" />
+    <Compile Include="FireFighter\FireFighterReportWriter.cs" />
+    <Compile Include="Bases\FormDispatch.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\FormDispatch.Designer.cs">
+    <Compile Include="Bases\FormDispatch.Designer.cs">
       <DependentUpon>FormDispatch.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\FormDispatchFood.cs">
+    <Compile Include="Food\FormDispatchFood.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\FormDispatchWater.cs">
+    <Compile Include="Water\FormDispatchWater.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\FormDispatchTents.cs">
+    <Compile Include="Tents\FormDispatchTents.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\FormDispatchElectricity.cs">
+    <Compile Include="Electricity\FormDispatchElectricity.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\FormDispatchRescue.cs">
+    <Compile Include="Rescue\FormDispatchRescue.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ReportWriter.cs" />
-    <Compile Include="RescuerReportWriter.cs" />
-    <Compile Include="ResourceReportWriter.cs" />
-    <Compile Include="SitesCol\RefugeeSiteRescueCol.cs" />
-    <Compile Include="SitesCol\RSElectricityCol.cs" />
-    <Compile Include="Site\RefugeeSiteFireFighter.cs" />
-    <Compile Include="SitesCol\RefugeeSiteFireFighterCol.cs" />
-    <Compile Include="Forms\UCFireFighter.cs">
+    <Compile Include="WaterFixer\FormDispatchWaterFixer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Bases\ReportWriter.cs" />
+    <Compile Include="Rescue\RescuerReportWriter.cs" />
+    <Compile Include="Bases\ResourceReportWriter.cs" />
+    <Compile Include="Rescue\RefugeeSiteRescueCol.cs" />
+    <Compile Include="Electricity\RSElectricityCol.cs" />
+    <Compile Include="FireFighter\RefugeeSiteFireFighterCol.cs" />
+    <Compile Include="Tents\UCTents.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Forms\UCTents.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Forms\FormDispatchFireFighter.cs">
+    <Compile Include="FireFighter\FormDispatchFireFighter.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="SitesCol\RefugeeSiteFoodCol.cs" />
-    <Compile Include="Forms\UCFood.cs">
+    <Compile Include="Food\RefugeeSiteFoodCol.cs" />
+    <Compile Include="Food\UCFood.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Forms\UCParas.cs">
+    <Compile Include="Bases\UCParas.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Forms\UCParas.Designer.cs">
+    <Compile Include="Bases\UCParas.Designer.cs">
       <DependentUpon>UCParas.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\UCWater.cs">
+    <Compile Include="Water\UCWater.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="IExportToWord.cs" />
-    <Compile Include="LogHelper.cs" />
+    <Compile Include="ExportView\IExportToWord.cs" />
+    <Compile Include="WaterFixer\RefugeeSiteWaterFixerCol.cs" />
+    <Compile Include="Util\LogHelper.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
-    <Compile Include="RoadNetwork.cs" />
+    <Compile Include="Bases\RoadNetwork.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Site\RefugeeSite.cs" />
-    <Compile Include="SitesCol\RefugeeSiteCol.cs" />
-    <Compile Include="RegionCoefficient.cs" />
-    <Compile Include="Repo\Repository.cs" />
-    <Compile Include="RepoCol\RepositoryCol.cs" />
-    <Compile Include="SitesCol\RefugeeSiteTentCol.cs" />
-    <Compile Include="SitesCol\RefugeeSiteWaterCol.cs" />
-    <Compile Include="SupplyNetwork.cs" />
-    <Compile Include="SeasonCoefficient.cs" />
-    <Compile Include="SupplyRoute.cs" />
-    <Compile Include="WordOperation.cs" />
-    <Compile Include="WorkspaceUtil.cs" />
+    <Compile Include="Bases\RefugeeSite.cs" />
+    <Compile Include="Bases\RefugeeSiteCol.cs" />
+    <Compile Include="Bases\RegionCoefficient.cs" />
+    <Compile Include="Bases\Repository.cs" />
+    <Compile Include="Bases\RepositoryCol.cs" />
+    <Compile Include="Tents\RefugeeSiteTentCol.cs" />
+    <Compile Include="Water\RefugeeSiteWaterCol.cs" />
+    <Compile Include="Bases\SupplyNetwork.cs" />
+    <Compile Include="Bases\SeasonCoefficient.cs" />
+    <Compile Include="Bases\SupplyRoute.cs" />
+    <Compile Include="ExportView\WordOperation.cs" />
+    <Compile Include="Util\WorkspaceUtil.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="log4net.config">
+    <None Include="Util\log4net.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="packages.config" />
+    <None Include="Util\packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Forms\FormDispatch.resx">
+    <EmbeddedResource Include="Bases\FormDispatch.resx">
       <DependentUpon>FormDispatch.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\UCFood.resx">
+    <EmbeddedResource Include="Food\UCFood.resx">
       <DependentUpon>UCFood.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\UCTents.resx">
+    <EmbeddedResource Include="Tents\UCTents.resx">
       <DependentUpon>UCTents.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\UCWater.resx">
+    <EmbeddedResource Include="Water\UCWater.resx">
       <DependentUpon>UCWater.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">

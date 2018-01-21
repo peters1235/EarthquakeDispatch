@@ -283,5 +283,14 @@ namespace EarthquakeDispatch
                 _dispatcher.ResourceType = EnumResource.Rescue;
             }
         }
+
+        private void 供水设备抢修人员分配ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DispatchResource(new FormDispatchWaterFixer());
+            if (_dispatcher != null)
+            {
+                _dispatcher.ResourceType = EnumResource.WaterFixer;
+            }
+        }
     }
 }

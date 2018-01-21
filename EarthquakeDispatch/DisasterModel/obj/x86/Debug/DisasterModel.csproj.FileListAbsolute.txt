@@ -1,0 +1,14 @@
+E:\17\private\Disaster\Earthquake\EarthquakeDispatch\Output\Properties\Resources.resx
+E:\17\private\Disaster\Earthquake\EarthquakeDispatch\Output\Properties\Resources.Designer.cs
+E:\17\private\Disaster\Earthquake\EarthquakeDispatch\Output\DisasterModel.dll
+E:\17\private\Disaster\Earthquake\EarthquakeDispatch\Output\DisasterModel.pdb
+E:\17\private\Disaster\Earthquake\EarthquakeDispatch\DisasterModel\obj\x86\Debug\DisasterModel.csprojResolveAssemblyReference.cache
+E:\17\private\Disaster\Earthquake\EarthquakeDispatch\DisasterModel\obj\x86\Debug\DisasterModel.FormDispatch.resources
+E:\17\private\Disaster\Earthquake\EarthquakeDispatch\DisasterModel\obj\x86\Debug\DisasterModel.Forms.UCFood.resources
+E:\17\private\Disaster\Earthquake\EarthquakeDispatch\DisasterModel\obj\x86\Debug\DisasterModel.Forms.UCTents.resources
+E:\17\private\Disaster\Earthquake\EarthquakeDispatch\DisasterModel\obj\x86\Debug\DisasterModel.UCWater.resources
+E:\17\private\Disaster\Earthquake\EarthquakeDispatch\DisasterModel\obj\x86\Debug\DisasterModel.Properties.Resources.resources
+E:\17\private\Disaster\Earthquake\EarthquakeDispatch\DisasterModel\obj\x86\Debug\DisasterModel.csproj.GenerateResource.Cache
+E:\17\private\Disaster\Earthquake\EarthquakeDispatch\DisasterModel\obj\x86\Debug\DisasterModel.dll
+E:\17\private\Disaster\Earthquake\EarthquakeDispatch\DisasterModel\obj\x86\Debug\DisasterModel.pdb
+E:\17\private\Disaster\Earthquake\EarthquakeDispatch\Output\Util\log4net.config

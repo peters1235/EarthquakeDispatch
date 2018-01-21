@@ -20,6 +20,8 @@ namespace DisasterModel
         public static string FireFighterField = "人数";
         public static string ElectricityRepairerField = "Id";
         public static string RescueField = "队伍人数";
+
+        public static string WaterFixerField = "人员";
        
         private string _resourceField;
         private int _repoCount = 0;
