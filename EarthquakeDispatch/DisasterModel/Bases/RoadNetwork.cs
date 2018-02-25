@@ -532,7 +532,7 @@ namespace DisasterModel
             IEnvelope envlope = facilityPoint.Envelope;
 
            
-            double _tolerance = 1000;
+            double _tolerance = 10;
             _tolerance = double.Parse( ConfigurationManager.AppSettings.Get("SearchRadius"));
             envlope.Expand(_tolerance,_tolerance,false);
 

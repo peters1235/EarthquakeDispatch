@@ -139,6 +139,12 @@
     <Compile Include="Food\FormDispatchFood.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="GasFixer\FormDispatchGasFixer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GasFixer\RefugeeSiteGasCarCol.cs" />
+    <Compile Include="GasFixer\RefugeeSiteGasManCol.cs" />
+    <Compile Include="GasFixer\GasReportWriter.cs" />
     <Compile Include="WaterFixer\WaterFixerReportWriter.cs" />
     <Compile Include="Water\FormDispatchWater.cs">
       <SubType>Form</SubType>

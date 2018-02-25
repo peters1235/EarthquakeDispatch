@@ -69,9 +69,7 @@ namespace DisasterModel
             while (site.ResourceInNeed > 0);
 
             IFeatureClassManage manage = this._outputFC as IFeatureClassManage;
-            ESRI.ArcGIS.Geometry.IEnvelope e1 = (this._outputFC as IGeoDataset).Extent;
             manage.UpdateExtent();
-            ESRI.ArcGIS.Geometry.IEnvelope e2 = (this._outputFC as IGeoDataset).Extent;
         }
 
         private void AddRouteFeature(SupplyRoute route)

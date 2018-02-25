@@ -327,5 +327,14 @@ namespace EarthquakeDispatch
                 _dispatcher.ResourceType = EnumResource.Communication;
             }
         }
+
+        private void È¼ÆøToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DispatchResource(new FormDispatchGasFixer());
+            if (_dispatcher != null)
+            {
+                _dispatcher.ResourceType = EnumResource.Gas;
+            }
+        }
     }
 }

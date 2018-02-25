@@ -24,6 +24,10 @@ namespace DisasterModel
         public static string WaterFixerField = "人员";
         public static string CommuFixerField = "人员"; 
 
+
+        public static string GasCarField = "抢修车";
+        public static string GasManField = "人员"; 
+
         private string _resourceField;
         private int _repoCount = 0;
         private int _totalResource = 0;

@@ -26,8 +26,8 @@ namespace DisasterModel
         protected virtual void ForTest()
         {
             txtEarthquakeName.Text = "he";
-            txtFacilityLoc.Text = @"E:\17\private\Disaster\Data\added\基站抢修人员.shp";
-            txtIncidentLoc.Text = @"E:\17\private\Disaster\Data\added\基站.shp";
+            txtFacilityLoc.Text = @"E:\17\private\Disaster\Data\added\燃气维修人员.shp";
+            txtIncidentLoc.Text = @"E:\17\private\Disaster\Data\added\燃气破坏点.shp";
             txtOutputFolder.Text = GetNonExist();
         }
 
@@ -101,29 +101,7 @@ namespace DisasterModel
                 string facilityData = txtFacilityLoc.Text;
                 string outputFolder = txtOutputFolder.Text;
 
-                _dispatcher = new Dispatcher();
-                _dispatcher.OutputFolder = outputFolder;
-                if (_dispatcher.Setup(quake, facilityData, incidentData))
-                {
-                    RefugeeSiteCol siteCol = GetSiteCol();
-                    _dispatcher.SetReportName(siteCol);
-                    RepositoryCol repoCol = GetRepoCol();
-
-                    SupplyNetwork supplyNetwork = new SupplyNetwork();
-                    supplyNetwork.SetLocations(siteCol, repoCol, _dispatcher.RoadNetwork);
-                    supplyNetwork.Init(_dispatcher.GetRoutesClass());
-
-                    foreach (var site in siteCol.Sites)
-                    {
-                        supplyNetwork.SupplyResource(site);
-                    }
-                    _dispatcher.StoreResult(supplyNetwork.Routes,repoCol,siteCol);
-                    this.DialogResult = System.Windows.Forms.DialogResult.OK;
-                }
-                else
-                {
-                    this.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-                }
+                DispatchResource(quake, incidentData, facilityData, outputFolder);
             }
             catch (Exception ex)
             {
@@ -132,6 +110,34 @@ namespace DisasterModel
             }
         }
 
+        protected virtual void DispatchResource(Earthquake quake, string incidentData, string facilityData, string outputFolder)
+        {
+            _dispatcher = new Dispatcher();
+            _dispatcher.OutputFolder = outputFolder;
+            if (_dispatcher.Setup(quake, facilityData, incidentData))
+            {
+                RefugeeSiteCol siteCol = GetSiteCol();
+                _dispatcher.SetReportName(siteCol);
+                RepositoryCol repoCol = GetRepoCol();
+
+                SupplyNetwork supplyNetwork = new SupplyNetwork();
+                supplyNetwork.SetLocations(siteCol, repoCol, _dispatcher.RoadNetwork);
+                supplyNetwork.Init(_dispatcher.GetRoutesClass());
+
+                foreach (var site in siteCol.Sites)
+                {
+                    supplyNetwork.SupplyResource(site);
+                }
+                _dispatcher.StoreResult(supplyNetwork.Routes, repoCol, siteCol);
+                this.DialogResult = System.Windows.Forms.DialogResult.OK;
+            }
+            else
+            {
+                this.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            }
+        }
+
+      
         protected abstract RepositoryCol GetRepoCol();
 
         protected abstract RefugeeSiteCol GetSiteCol();

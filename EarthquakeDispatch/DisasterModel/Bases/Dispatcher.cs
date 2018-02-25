@@ -299,6 +299,8 @@ namespace DisasterModel
                     return new WaterFixerReportWriter();
                 case EnumResource.Communication:
                     return new ComuFixerReportWriter();
+                case EnumResource.Gas:
+                    return new GasReportWriter();
                 default:
                     return new ResourceReportWriter();
 
@@ -344,9 +346,9 @@ namespace DisasterModel
         }
 
         public string _reportName = "" ;
-        private List<SupplyRoute> _resultRoutes;
-        private RepositoryCol _reposRemain;
-        private RefugeeSiteCol _sitesRemain;
+        private List<SupplyRoute> _resultRoutes = new List<SupplyRoute>();
+        private RepositoryCol _reposRemain = new RepositoryCol();
+        private RefugeeSiteCol _sitesRemain  ;
 
         public RepositoryCol ReposRemain
         {
@@ -356,6 +358,11 @@ namespace DisasterModel
         public RefugeeSiteCol SitesRemain
         {
             get { return _sitesRemain; }
+        }
+
+        internal void SetReportName(String name)
+        {
+            _reportName = name;
         }
 
         internal void SetReportName(RefugeeSiteCol siteCol)
@@ -372,7 +379,8 @@ namespace DisasterModel
 
         internal void StoreResult(List<SupplyRoute> list, RepositoryCol repoCol, RefugeeSiteCol siteCol)
         {
-            this._resultRoutes = list;
+            this._resultRoutes.AddRange( list);
+
             this._reposRemain = repoCol;
             this._sitesRemain = siteCol;
         }

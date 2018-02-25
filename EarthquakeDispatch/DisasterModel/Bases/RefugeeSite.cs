@@ -135,4 +135,31 @@ namespace DisasterModel
             return "名";
         }
     }
+
+    /////////
+    class RefugeeSiteGasCar : RefugeeSite
+    {
+        internal override string ResourceName()
+        {
+            return "燃气抢修车";
+        }
+
+        internal override string ResourceUnit()
+        {
+            return "辆";
+        }
+    }
+
+    class RefugeeSiteGasMan : RefugeeSite
+    {
+        internal override string ResourceName()
+        {
+            return "燃气抢修人员";
+        }
+
+        internal override string ResourceUnit()
+        {
+            return "名";
+        }
+    }
 }
