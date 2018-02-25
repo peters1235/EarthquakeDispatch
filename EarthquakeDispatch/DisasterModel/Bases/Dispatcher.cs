@@ -32,6 +32,9 @@ namespace DisasterModel
             string networkWorkspace = System.IO.Path.Combine(Application.StartupPath,
         @"AnalystData\road");// @"F:\17\private\Disaster\Data\road";
             string networkClassName = "road_ND";
+#if DEBUG
+            networkClassName = "road_two_regions_ND"; 
+#endif
 
             string analystDataPath = System.IO.Path.Combine(Application.StartupPath,
                 "AnalystData");// @"F:\17\private\Disaster\Data\EarthquakeData";
@@ -198,28 +201,41 @@ namespace DisasterModel
         {
             if (_map == null)
             {
-                IMapDocument mapDocu = new MapDocumentClass();
-                mapDocu.Open(GetMxdLoc());
-                _map = mapDocu.Map[0];
+                try
+                {
+                    IMapDocument mapDocu = new MapDocumentClass();
+                    mapDocu.Open(GetMxdLoc());
+                    _map = mapDocu.Map[0];
 
-                pageLayoutControl.LoadMxFile(GetMxdLoc());
-                _map = pageLayoutControl.ActiveView.FocusMap;
+                    pageLayoutControl.LoadMxFile(GetMxdLoc());
+                    _map = pageLayoutControl.ActiveView.FocusMap;
 
-                IFeatureLayer incidentsLayer = FindLayer(_map, "灾区位置分布点");
-                incidentsLayer.FeatureClass = this.SiteFeatureClass;
+                    IFeatureLayer incidentsLayer = FindLayer(_map, "灾区位置分布点");
+                    incidentsLayer.FeatureClass = this.SiteFeatureClass;
 
-                IFeatureLayer facilityLayer = FindLayer(_map, "物资贮备分布点");
-                facilityLayer.FeatureClass = this.RepoFeatureClass;
+                    IFeatureLayer facilityLayer = FindLayer(_map, "物资贮备分布点");
+                    facilityLayer.FeatureClass = this.RepoFeatureClass;
 
-                incidentsLayer.Name = _incidentClassName;
-                facilityLayer.Name = _facilityClassName;
+                    incidentsLayer.Name = _incidentClassName;
+                    facilityLayer.Name = _facilityClassName;
 
-                ILayer networkLayer = _roadNetwork.GetNetworkLayer();
-                _map.AddLayer(networkLayer);
-                _map.MoveLayer(networkLayer, 3);
+                    ILayer networkLayer = _roadNetwork.GetNetworkLayer();
+                    _map.AddLayer(networkLayer);
+                    _map.MoveLayer(networkLayer, 3);
 
-                //_map.AreaOfInterest = (networkLayer as ESRI.ArcGIS.Carto.NetworkLayerClass).AreaOfInterest;
-                pageLayoutControl.Extent = (networkLayer as IGeoDataset).Extent;
+                    IFeatureLayer resultLayer = FindLayer(_map, "Routes");
+                    ESRI.ArcGIS.Geometry.IEnvelope envResult = ((resultLayer as IFeatureLayer).FeatureClass as IGeoDataset).Extent;
+                    envResult.Expand(1.2, 1.2, true);
+
+                    (pageLayoutControl.ActiveView.FocusMap as IActiveView).ScreenDisplay.DisplayTransformation
+                      .VisibleBounds = envResult;
+                    pageLayoutControl.ActiveView.PartialRefresh(esriViewDrawPhase.esriViewGeography, null, null);
+                }
+                catch (Exception ex)
+                {
+                    LogHelper.Error(ex.Message);
+                    return null;
+                }
             }
             return _map;
         }
@@ -279,8 +295,13 @@ namespace DisasterModel
                     return new FireFighterReportWriter();
                 case EnumResource.Rescue:
                     return new RescuerReportWriter();
+                case EnumResource.WaterFixer:
+                    return new WaterFixerReportWriter();
+                case EnumResource.Communication:
+                    return new ComuFixerReportWriter();
                 default:
                     return new ResourceReportWriter();
+
             }  
         }
 

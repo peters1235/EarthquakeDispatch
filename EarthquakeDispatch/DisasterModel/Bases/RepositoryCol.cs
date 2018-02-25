@@ -22,7 +22,8 @@ namespace DisasterModel
         public static string RescueField = "队伍人数";
 
         public static string WaterFixerField = "人员";
-       
+        public static string CommuFixerField = "人员"; 
+
         private string _resourceField;
         private int _repoCount = 0;
         private int _totalResource = 0;

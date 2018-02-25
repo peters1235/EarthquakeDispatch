@@ -49,6 +49,7 @@ namespace EarthquakeDispatch
             this.mnuRescue = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuElectricity = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuFireFighter = new System.Windows.Forms.ToolStripMenuItem();
+            this.供水设备抢修人员分配ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.测试导出报告ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.带标注ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.不带标注ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -62,7 +63,7 @@ namespace EarthquakeDispatch
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.axMapControl1 = new ESRI.ArcGIS.Controls.AxMapControl();
-            this.供水设备抢修人员分配ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.通讯基站抢修人员分配ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.axToolbarControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.axTOCControl1)).BeginInit();
@@ -154,7 +155,8 @@ namespace EarthquakeDispatch
             this.mnuRescue,
             this.mnuElectricity,
             this.mnuFireFighter,
-            this.供水设备抢修人员分配ToolStripMenuItem});
+            this.供水设备抢修人员分配ToolStripMenuItem,
+            this.通讯基站抢修人员分配ToolStripMenuItem});
             this.mnuParent.Name = "mnuParent";
             this.mnuParent.Size = new System.Drawing.Size(92, 21);
             this.mnuParent.Text = "计算物资供应";
@@ -163,44 +165,51 @@ namespace EarthquakeDispatch
             // mnuWater
             // 
             this.mnuWater.Name = "mnuWater";
-            this.mnuWater.Size = new System.Drawing.Size(172, 22);
+            this.mnuWater.Size = new System.Drawing.Size(196, 22);
             this.mnuWater.Text = "饮用水供给";
             this.mnuWater.Click += new System.EventHandler(this.饮用水供给ToolStripMenuItem_Click);
             // 
             // mnuFood
             // 
             this.mnuFood.Name = "mnuFood";
-            this.mnuFood.Size = new System.Drawing.Size(172, 22);
+            this.mnuFood.Size = new System.Drawing.Size(196, 22);
             this.mnuFood.Text = "方便食品供给";
             this.mnuFood.Click += new System.EventHandler(this.方便食品供给ToolStripMenuItem_Click);
             // 
             // mnuTent
             // 
             this.mnuTent.Name = "mnuTent";
-            this.mnuTent.Size = new System.Drawing.Size(172, 22);
+            this.mnuTent.Size = new System.Drawing.Size(196, 22);
             this.mnuTent.Text = "救灾帐篷供给";
             this.mnuTent.Click += new System.EventHandler(this.救灾帐篷供给ToolStripMenuItem_Click);
             // 
             // mnuRescue
             // 
             this.mnuRescue.Name = "mnuRescue";
-            this.mnuRescue.Size = new System.Drawing.Size(172, 22);
+            this.mnuRescue.Size = new System.Drawing.Size(196, 22);
             this.mnuRescue.Text = "救援队伍分配";
             this.mnuRescue.Click += new System.EventHandler(this.救援队伍分配ToolStripMenuItem_Click);
             // 
             // mnuElectricity
             // 
             this.mnuElectricity.Name = "mnuElectricity";
-            this.mnuElectricity.Size = new System.Drawing.Size(172, 22);
+            this.mnuElectricity.Size = new System.Drawing.Size(196, 22);
             this.mnuElectricity.Text = "电力抢修人员分配";
             this.mnuElectricity.Click += new System.EventHandler(this.电力抢修人员分配ToolStripMenuItem_Click);
             // 
             // mnuFireFighter
             // 
             this.mnuFireFighter.Name = "mnuFireFighter";
-            this.mnuFireFighter.Size = new System.Drawing.Size(172, 22);
+            this.mnuFireFighter.Size = new System.Drawing.Size(196, 22);
             this.mnuFireFighter.Text = "消防员分配";
             this.mnuFireFighter.Click += new System.EventHandler(this.消防员分配ToolStripMenuItem_Click);
+            // 
+            // 供水设备抢修人员分配ToolStripMenuItem
+            // 
+            this.供水设备抢修人员分配ToolStripMenuItem.Name = "供水设备抢修人员分配ToolStripMenuItem";
+            this.供水设备抢修人员分配ToolStripMenuItem.Size = new System.Drawing.Size(196, 22);
+            this.供水设备抢修人员分配ToolStripMenuItem.Text = "供水设备抢修人员分配";
+            this.供水设备抢修人员分配ToolStripMenuItem.Click += new System.EventHandler(this.供水设备抢修人员分配ToolStripMenuItem_Click);
             // 
             // 测试导出报告ToolStripMenuItem
             // 
@@ -215,14 +224,14 @@ namespace EarthquakeDispatch
             // 带标注ToolStripMenuItem
             // 
             this.带标注ToolStripMenuItem.Name = "带标注ToolStripMenuItem";
-            this.带标注ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.带标注ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
             this.带标注ToolStripMenuItem.Text = "导出报告";
             this.带标注ToolStripMenuItem.Click += new System.EventHandler(this.带标注ToolStripMenuItem_Click);
             // 
             // 不带标注ToolStripMenuItem
             // 
             this.不带标注ToolStripMenuItem.Name = "不带标注ToolStripMenuItem";
-            this.不带标注ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.不带标注ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
             this.不带标注ToolStripMenuItem.Text = "不带标注";
             this.不带标注ToolStripMenuItem.Visible = false;
             this.不带标注ToolStripMenuItem.Click += new System.EventHandler(this.不带标注ToolStripMenuItem_Click);
@@ -321,12 +330,12 @@ namespace EarthquakeDispatch
             this.axMapControl1.TabIndex = 9;
             this.axMapControl1.Visible = false;
             // 
-            // 供水设备抢修人员分配ToolStripMenuItem
+            // 通讯基站抢修人员分配ToolStripMenuItem
             // 
-            this.供水设备抢修人员分配ToolStripMenuItem.Name = "供水设备抢修人员分配ToolStripMenuItem";
-            this.供水设备抢修人员分配ToolStripMenuItem.Size = new System.Drawing.Size(196, 22);
-            this.供水设备抢修人员分配ToolStripMenuItem.Text = "供水设备抢修人员分配";
-            this.供水设备抢修人员分配ToolStripMenuItem.Click += new System.EventHandler(this.供水设备抢修人员分配ToolStripMenuItem_Click);
+            this.通讯基站抢修人员分配ToolStripMenuItem.Name = "通讯基站抢修人员分配ToolStripMenuItem";
+            this.通讯基站抢修人员分配ToolStripMenuItem.Size = new System.Drawing.Size(196, 22);
+            this.通讯基站抢修人员分配ToolStripMenuItem.Text = "通讯基站抢修人员分配";
+            this.通讯基站抢修人员分配ToolStripMenuItem.Click += new System.EventHandler(this.通讯基站抢修人员分配ToolStripMenuItem_Click);
             // 
             // MainForm
             // 
@@ -392,6 +401,7 @@ namespace EarthquakeDispatch
         private System.Windows.Forms.TabPage tabPage2;
         private ESRI.ArcGIS.Controls.AxMapControl axMapControl1;
         private System.Windows.Forms.ToolStripMenuItem 供水设备抢修人员分配ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 通讯基站抢修人员分配ToolStripMenuItem;
     }
 }
 

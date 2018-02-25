@@ -122,4 +122,17 @@ namespace DisasterModel
             return "名";
         }
     }
+
+    class RefugeeSiteCommuFixer : RefugeeSite
+    {
+        internal override string ResourceName()
+        {
+            return "通讯基站抢修人员";
+        }
+
+        internal override string ResourceUnit()
+        {
+            return "名";
+        }
+    }
 }

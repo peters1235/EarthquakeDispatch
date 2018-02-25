@@ -14,6 +14,7 @@ using ESRI.ArcGIS.ADF;
 using ESRI.ArcGIS.SystemUI;
 using DisasterModel;
 using System.Configuration;
+using ESRI.ArcGIS.Geometry;
 
 namespace EarthquakeDispatch
 {
@@ -21,6 +22,8 @@ namespace EarthquakeDispatch
     {
         #region class private members
         private IMapControl3 m_mapControl = null;
+        private IPageLayoutControl3 m_pageLayoutControl = null;
+
         private string m_mapDocumentName = string.Empty;
 
         Dispatcher _dispatcher = null;
@@ -37,11 +40,18 @@ namespace EarthquakeDispatch
         {
             //get the MapControl
             m_mapControl = (IMapControl3)axMapControl1.Object;
+            m_pageLayoutControl = (IPageLayoutControl3)axPageLayoutControl1.Object;
 
             //disable the Save menu (since there is no document yet)
             menuSaveDoc.Enabled = false;
 
             Setup();
+            axPageLayoutControl1.OnMouseMove +=new IPageLayoutControlEvents_Ax_OnMouseMoveEventHandler          (axPageLayoutControl1_OnMouseMove);
+        }
+
+        private void  axPageLayoutControl1_OnMouseMove(object sender, IPageLayoutControlEvents_OnMouseMoveEvent e)
+        {
+            statusBarXY.Text = string.Format("{0}, {1}  {2}",e.pageX.ToString("#######.##"), e.pageY.ToString("#######.##"), axMapControl1.MapUnits.ToString().Substring(4)); 
         }
 
         private void Setup()
@@ -88,13 +98,14 @@ namespace EarthquakeDispatch
         {
             //execute Open Document command
             ICommand command = new ControlsOpenDocCommandClass();
-            command.OnCreate(m_mapControl.Object);
+            command.OnCreate(axPageLayoutControl1.Object);
             command.OnClick();
         }
 
         private void menuSaveDoc_Click(object sender, EventArgs e)
         {
             //execute Save Document command
+         
             if (m_mapControl.CheckMxFile(m_mapDocumentName))
             {
                 //create a new instance of a MapDocument
@@ -151,7 +162,7 @@ namespace EarthquakeDispatch
             {
                 //enable the Save manu and write the doc name to the statusbar
                 menuSaveDoc.Enabled = true;
-                statusBarXY.Text = Path.GetFileName(m_mapDocumentName);
+                statusBarXY.Text = System.IO.Path.GetFileName(m_mapDocumentName);
             }
         }
 
@@ -262,7 +273,7 @@ namespace EarthquakeDispatch
                 _dispatcher = input.Dispatcher;
                 //axMapControl1.Map = _dispatcher.GetMap();
                // axMapControl1.Map =
-                    _dispatcher.GetMap(axPageLayoutControl1);
+                _dispatcher.GetMap(axPageLayoutControl1);
             }
         }
 
@@ -290,6 +301,30 @@ namespace EarthquakeDispatch
             if (_dispatcher != null)
             {
                 _dispatcher.ResourceType = EnumResource.WaterFixer;
+            }
+        }
+
+        private void showExtentToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            IEnvelope env = axPageLayoutControl1.Extent;
+            string extent = string.Format("xmin ymin xmax ymax {0},{1},{2},{3}",
+                env.XMin, env.YMin, env.XMax, env.YMax);
+            MessageBox.Show(extent);
+
+            IEnvelope e2 = new EnvelopeClass();
+            e2.PutCoords(1478084, 4624822, 1521170, 4662624);
+            (axPageLayoutControl1.ActiveView.FocusMap as IActiveView).ScreenDisplay.DisplayTransformation
+                .VisibleBounds = e2;
+            axPageLayoutControl1.ActiveView.PartialRefresh(esriViewDrawPhase.esriViewGeography, null, null);
+            //axPageLayoutControl1.Extent = e2;
+        }
+
+        private void 通讯基站抢修人员分配ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DispatchResource(new FormDispatchComuFixer());
+            if (_dispatcher != null)
+            {
+                _dispatcher.ResourceType = EnumResource.Communication;
             }
         }
     }

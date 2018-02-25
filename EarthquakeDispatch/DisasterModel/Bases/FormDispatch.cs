@@ -26,8 +26,8 @@ namespace DisasterModel
         protected virtual void ForTest()
         {
             txtEarthquakeName.Text = "he";
-            txtFacilityLoc.Text = @"E:\17\private\Disaster\Data\added\供水维修人员.shp";
-            txtIncidentLoc.Text = @"E:\17\private\Disaster\Data\added\供水设备破坏点.shp";
+            txtFacilityLoc.Text = @"E:\17\private\Disaster\Data\added\基站抢修人员.shp";
+            txtIncidentLoc.Text = @"E:\17\private\Disaster\Data\added\基站.shp";
             txtOutputFolder.Text = GetNonExist();
         }
 

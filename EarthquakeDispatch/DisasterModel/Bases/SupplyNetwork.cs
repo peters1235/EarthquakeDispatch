@@ -40,7 +40,11 @@ namespace DisasterModel
                 _roadNetwork.SetIncidents(siteClass, siteFilter);
 
                 SupplyRoute route = _roadNetwork.FindRoute();
-
+                if (route == null)
+                {
+                    LogHelper.Error("剩余的" + site.ResourceName()+"因为路径不通无法配送");
+                    break;
+                }
                 Repository repo = _repositoryCol.FindRepoByID(route.RepoID);
                 int amount = 0;
                 if (repo.Remain >= site.ResourceInNeed)
@@ -63,6 +67,11 @@ namespace DisasterModel
                 _siteRoutes.Add(route);
             }
             while (site.ResourceInNeed > 0);
+
+            IFeatureClassManage manage = this._outputFC as IFeatureClassManage;
+            ESRI.ArcGIS.Geometry.IEnvelope e1 = (this._outputFC as IGeoDataset).Extent;
+            manage.UpdateExtent();
+            ESRI.ArcGIS.Geometry.IEnvelope e2 = (this._outputFC as IGeoDataset).Extent;
         }
 
         private void AddRouteFeature(SupplyRoute route)

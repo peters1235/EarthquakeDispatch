@@ -119,6 +119,11 @@
   <ItemGroup>
     <Compile Include="Bases\Dispatcher.cs" />
     <Compile Include="Bases\Earthquake.cs" />
+    <Compile Include="Commu\FormDispatchComuFixer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Commu\RefugeeSiteComuFixerCol.cs" />
+    <Compile Include="Commu\ComuFixerReportWriter.cs" />
     <Compile Include="Electricity\ElectricityReportWriter.cs" />
     <Compile Include="Bases\EnumResource.cs" />
     <Compile Include="ExportView\ExportActiveView.cs" />
@@ -133,6 +138,7 @@
     <Compile Include="Food\FormDispatchFood.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="WaterFixer\WaterFixerReportWriter.cs" />
     <Compile Include="Water\FormDispatchWater.cs">
       <SubType>Form</SubType>
     </Compile>

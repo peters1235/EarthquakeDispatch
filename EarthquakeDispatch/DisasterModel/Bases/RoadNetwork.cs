@@ -498,7 +498,6 @@ namespace DisasterModel
 
                 if (!m_NAContext.Solver.Solve(m_NAContext, gpMessages, null))
                 {
-
                 }
 
                 IFeatureClass routeClass = m_NAContext.NAClasses.get_ItemByName(OUTPUTCLASSNAME) as IFeatureClass;
