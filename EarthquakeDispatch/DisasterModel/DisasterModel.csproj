@@ -107,6 +107,7 @@
       <HintPath>C:\dev3rd3\office_sign\microsoft.office.interop.word.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />

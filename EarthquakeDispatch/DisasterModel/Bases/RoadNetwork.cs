@@ -8,6 +8,7 @@ using ESRI.ArcGIS.esriSystem;
 using ESRI.ArcGIS.Geometry;
 using ESRI.ArcGIS.ADF;
 using ESRI.ArcGIS.Carto;
+using System.Configuration;
 
 namespace DisasterModel
 {
@@ -529,8 +530,10 @@ namespace DisasterModel
         private int FindFacilityID(IPoint facilityPoint)
         {
             IEnvelope envlope = facilityPoint.Envelope;
-            
-            double _tolerance = 10;
+
+           
+            double _tolerance = 1000;
+            _tolerance = double.Parse( ConfigurationManager.AppSettings.Get("SearchRadius"));
             envlope.Expand(_tolerance,_tolerance,false);
 
             ISpatialFilter filter = new SpatialFilter();
