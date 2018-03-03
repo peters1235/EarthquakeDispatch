@@ -47,6 +47,7 @@ namespace EarthquakeDispatch
 
             Setup();
             axPageLayoutControl1.OnMouseMove +=new IPageLayoutControlEvents_Ax_OnMouseMoveEventHandler          (axPageLayoutControl1_OnMouseMove);
+            axPageLayoutControl1.Visible = false;
         }
 
         private void  axPageLayoutControl1_OnMouseMove(object sender, IPageLayoutControlEvents_OnMouseMoveEvent e)
@@ -72,7 +73,9 @@ namespace EarthquakeDispatch
             this.mnuRescue.Visible = personVisible;
             this.mnuElectricity.Visible = personVisible;
             this.mnuFireFighter.Visible = personVisible;
-
+            this.mnuWaterFixer.Visible = personVisible;
+            this.mnuCommuFixer.Visible = personVisible;
+            this.mnuGasFixer.Visible = personVisible;
         }
 
         private bool GetBooleanConfig(string key)
@@ -274,6 +277,7 @@ namespace EarthquakeDispatch
                 //axMapControl1.Map = _dispatcher.GetMap();
                // axMapControl1.Map =
                 _dispatcher.GetMap(axPageLayoutControl1);
+                axPageLayoutControl1.Visible = true;
             }
         }
 
